@@ -42,7 +42,7 @@ namespace Rtl.TVMaze.Service.Services
 
         private DocumentClient client;
         private readonly string Endpoint = "https://tvmaze.documents.azure.com:443/";
-        private readonly string Key = "itlU4w70c1Z070V3yi06hj0eZCXd3OuTWR5CuBk53bjHQ8l6b3X672Pq1CtCssNB8WDhh400leGBDlJGr6xa0Q==";
+        private readonly string Key = "secret";
         private readonly string DatabaseId = "RvMazeShows";
         private readonly string CollectionId = "Items";
     }
