@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rtl.TVMaze.Api", "Rtl.TVMaze.Api\Rtl.TVMaze.Api.csproj", "{0954A6FA-EB36-4F44-9E54-3C38B482D1A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rtl.TVMaze.Service", "Rtl.TVMaze.Service\Rtl.TVMaze.Service.csproj", "{57168384-64BA-46C5-A9A2-6737784EF388}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rtl.TVMaze.Domain", "Rtl.TVMaze.Domain\Rtl.TVMaze.Domain.csproj", "{70832F8B-D39B-499C-B8DC-D212554087F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0954A6FA-EB36-4F44-9E54-3C38B482D1A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0954A6FA-EB36-4F44-9E54-3C38B482D1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0954A6FA-EB36-4F44-9E54-3C38B482D1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0954A6FA-EB36-4F44-9E54-3C38B482D1A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57168384-64BA-46C5-A9A2-6737784EF388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57168384-64BA-46C5-A9A2-6737784EF388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57168384-64BA-46C5-A9A2-6737784EF388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57168384-64BA-46C5-A9A2-6737784EF388}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70832F8B-D39B-499C-B8DC-D212554087F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70832F8B-D39B-499C-B8DC-D212554087F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70832F8B-D39B-499C-B8DC-D212554087F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70832F8B-D39B-499C-B8DC-D212554087F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8EACCD7-E471-45F0-AAAB-27AE0AE41850}
+	EndGlobalSection
+EndGlobal
