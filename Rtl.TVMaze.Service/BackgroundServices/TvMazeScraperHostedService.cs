@@ -29,26 +29,27 @@ namespace Rtl.TVMaze.Service.BackgroundServices
             timer?.Dispose();
         }
 
-        public TvMazeScraperHostedService(IMetaDataScraper tvMazeScraper, IStorageService<Show> storageService)
+        public TvMazeScraperHostedService(IMetaDataScraper tvMazeScraper, IStorageService storageService)
         {
             this.tvMazeScraper = tvMazeScraper;
             this.storageService = storageService;
         }
 
+        //TODO implement update strategy, so only import new shows that are not in our DB.
         private void ScrapeShows(object state)
         {
-            //get shows from page 0 to 9
-            for (int i = 0; i < 2; i++)
+            //get only shows from page 0 to 9 because of rate limit
+            for (int i = 0; i < 10; i++)
             {
                 var shows = tvMazeScraper.GetShows(i).ToList();
                 tvMazeScraper.EnrichShows(shows);
 
-                //shows.ForEach(s => storageService.CreateItemAsync(s).Wait());
+                shows.ForEach(s => storageService.CreateItemAsync(s).Wait());
             }
         }
 
         private readonly IMetaDataScraper tvMazeScraper;
-        private readonly IStorageService<Show> storageService;
+        private readonly IStorageService storageService;
         private Timer timer;
     }
 }

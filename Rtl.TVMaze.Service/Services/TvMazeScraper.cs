@@ -1,19 +1,21 @@
-﻿using System;
+﻿using AutoMapper;
+using RestSharp;
+using Rtl.TVMaze.Domain.Model;
+using Rtl.TVMaze.Service.DTO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text.Json;
-using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
-using RestSharp;
-using Rtl.TVMaze.Domain.Model;
-using Rtl.TVMaze.Service.DTO;
 
 namespace Rtl.TVMaze.Service.Services
 {
     public class TvMazeScraper : IMetaDataScraper
     {
+        /// <summary>
+        /// Enrich shows with cast. Cast is sorted by birthady descending.
+        /// </summary>
+        /// <param name="shows"></param>
         public void EnrichShows(IEnumerable<Show> shows)
         {
             foreach(var show in shows)
@@ -26,6 +28,11 @@ namespace Rtl.TVMaze.Service.Services
             }
         }
 
+        /// <summary>
+        /// Get shows by page, each page return aprox 250 shows
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
         public IEnumerable<Show> GetShows(int page)
         {
             RestRequest request = new RestRequest($"shows?page={page}", DataFormat.Json);

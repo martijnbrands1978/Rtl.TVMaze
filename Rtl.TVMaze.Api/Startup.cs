@@ -34,7 +34,7 @@ namespace Rtl.TVMaze.Api
 
             //services
             services.AddTransient<IMetaDataScraper, TvMazeScraper>();
-            services.AddTransient<IStorageService<Show>, DocumentDbService<Show>>();
+            services.AddTransient<IStorageService, ShowStorageService>();
 
             //backgroundservice
             services.AddHostedService<TvMazeScraperHostedService>();

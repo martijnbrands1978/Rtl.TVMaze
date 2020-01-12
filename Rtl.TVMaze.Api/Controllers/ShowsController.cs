@@ -1,32 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Rtl.TVMaze.Service.Services;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Rtl.TVMaze.Domain.Model;
-using Rtl.TVMaze.Service.Services;
 
 namespace Rtl.TVMaze.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ShowsController : ControllerBase
     {
-        public ShowsController(IStorageService<Show> documentDbService)
+        public ShowsController(IStorageService documentDbService)
         {
             this.documentDbService = documentDbService;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Show>> Get()
+        public async Task<IActionResult> Get(int? page)
         {
-            var shows = await documentDbService.GetItemsAsync(0);
-            
-            //var x = await documentDbService.GetItemAsync("5");
-            return shows;
+            page = page ?? 0;
+            var shows = await documentDbService.GetItemsAsync((int)page);
+
+            if (!shows.Any())
+            {
+                return NotFound($"page {page} not found");
+            }
+
+            return Ok(shows);
         }
 
-        private readonly IStorageService<Show> documentDbService;
+        private readonly IStorageService documentDbService;
     }
 }
