@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace Rtl.TVMaze.Service.BackgroundServices
 {
+    /// <summary>
+    /// Timed service to get Shows from the TVMaze api. 
+    /// When this app is scaled to multiple instances this service should be moved to a seperate app or Azure function.
+    /// </summary>
     public class TvMazeScraperHostedService : IHostedService, IDisposable
     {
         public Task StartAsync(CancellationToken cancellationToken)
